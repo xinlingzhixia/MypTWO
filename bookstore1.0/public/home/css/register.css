@@ -1,0 +1,29 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/*border: 1px solid red;*/	
+}
+.registercontentcl{
+	background: rgb(242,226,203);
+}
+
+.registercontenttop h2{
+	font-size: 16px;
+}
+
+.registercontenttop h3{
+	font-size: 14px;
+}
+.registercontenttop p{
+	font-size: 12px;
+}
+#registercontentrightp1{
+	text-decoration:underline ;
+	color: black;
+}
+
+#registercontenthmclubcheckboxp{
+	font-size: 12px;
+	color:#707070 ;
+}

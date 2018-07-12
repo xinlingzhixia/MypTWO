@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>购物车</title>
+    <link href="<?php echo __HOME_CSS__ ;?>bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="<?php echo __HOME_JS__ ;?>jquery-1.11.0.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="<?php echo __HOME_CSS__ ;?>style.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords"
+          content="Training Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="<?php echo __HOME_JS__ ;?>move-top.js"></script>
+    <script type="text/javascript" src="<?php echo __HOME_JS__ ;?>easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
+    <!-- //end-smoth-scrolling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="<?php echo __ADMIN_CSS__;?>bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo __ADMIN_CSS__;?>datepicker3.css" rel="stylesheet">
+    <link href="<?php echo __ADMIN_CSS__;?>styles.css" rel="stylesheet">
+
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- //Custom Theme files -->
+    <!-- js -->
+    <script src="<?php echo __HOME_JS__;?>jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <!-- start-smoth-scrolling-->
+    <script type="text/javascript" src="<?php echo __HOME_JS__;?>move-top.js"></script>
+    <script type="text/javascript" src="<?php echo __HOME_JS__;?>easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
+    <!--//end-smoth-scrolling-->
+</head>
+
+<body>
+<!--顶部导航代码开始-->
+<div class="banner1">
+    <!--引入公共代码-->
+    <?php include_once __HOME_COMMON__."index_header.html"; ?>
+
+    <!--//header-bottom-->
+</div>
+<!--顶部导航代码结束-->
+
+
+<!--/.row-->
+<div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+        <div class="panel panel-default">
+            <div class="panel-heading">购物车列表</div>
+            <div class="panel-body">
+                <table id="table" data-show-refresh="true" data-show-toggle="true" data-show-columns="true"
+                       data-search="true"></table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+<!--/.row-->
+<!--引入公共代码-->
+<?php include_once __HOME_COMMON__."index_footer.html"; ?>
+
+<!--//header-bottom-->
+<script src="<?php echo __ADMIN_JS__;?>bootstrap.min.js"></script>
+<script src="<?php echo __ADMIN_JS__;?>chart.min.js"></script>
+<script src="<?php echo __ADMIN_JS__;?>chart-data.js"></script>
+<script src="<?php echo __ADMIN_JS__;?>easypiechart.js"></script>
+<script src="<?php echo __ADMIN_JS__;?>easypiechart-data.js"></script>
+<script src="<?php echo __ADMIN_JS__;?>bootstrap-datepicker.js"></script>
+<script src="<?php echo __ADMIN_JS__;?>bootstrap-table.js"></script>
+<script>
+    !function ($) {
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+            $(this).find('em:first').toggleClass("glyphicon-minus");
+        });
+        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
+
+    $(window).on('resize', function () {
+        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
+        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    })
+</script>
+
+
+<script type="text/javascript">
+
+    $("#table").bootstrapTable({ // 对应table标签的id
+        url: "index.php?g=home&c=goods&a=list",
+        cache: false, // 设置为 false 禁用 AJAX 数据缓存， 默认为true
+        striped: true,  //表格显示条纹，默认为false
+        pagination: true, // 在表格底部显示分页组件，默认false
+        pageList: [10, 20], // 设置页面可以显示的数据条数
+        pageSize: 10, // 页面数据条数
+        pageNumber: 1, // 首页页码
+        sidePagination: 'server', // 设置为服务器端分页
+        queryParams: function (params) { // 请求服务器数据时发送的参数，可以在这里添加额外的查询参数，返回false则终止请求
+            return {
+                pageSize: params.limit, // 每页要显示的数据条数
+                pageIndex: (params.offset / params.limit) + 1,//页码
+                like: params.search //模糊查询的条件
+            }
+        },
+        columns: [
+            // {
+            //     checkbox: true, // 显示一个勾选框
+            //     title: 'ID',
+            //     field: 'id', // 返回json数据中的name
+            //     align: 'center', // 居中显示
+            //
+            // },
+            {
+                field: 'name', // 返回json数据中的name
+                title: '书名', // 表格表头显示文字
+                align: 'center', // 左右居中
+                valign: 'middle', // 上下居中
+                width: 200
+            }, {
+                field: 'price',
+                title: '价格',
+                align: 'center',
+                valign: 'middle',
+                width: 160
+            }, /*{
+            //     field: 'count',
+            //     title: '数量',
+            //     align: 'center',
+            //     valign: 'middle',
+            //     width: 160
+            },*/ {
+                field: 'author',
+                title: '作者',
+                align: 'center',
+                valign: 'middle',
+                width: 160
+            }, {
+                title: "操作",
+                align: 'center',
+                valign: 'middle',
+                // align: 'right',
+                // width: 200, // 定义列的宽度，单位为像素px
+                formatter: function (value, row, index) {
+                    return '<button class="btn btn-primary btn-sm" onclick="del(' + row.id + ')">删除</button>' + '&nbsp&nbsp' + '<button class="btn btn-primary btn-sm" onclick="god(' + row.id + ')">购买</button>';
+                }
+            }
+
+        ],
+        onLoadSuccess: function () {  //加载成功时执行
+
+        },
+        onLoadError: function () {  //加载失败时执行
+            console.info("加载数据失败");
+        }
+    })
+
+    function del(id) {
+        var result = confirm("确认要删除该条数据吗？");
+        if (result) {
+            window.location.href = "index.php?g=home&c=goods&a=del&id=" + id;
+        } else {
+            window.location.href = "index.php?g=home&c=index&a=goods";
+        }
+    }
+
+    function god(id) {
+        var result = confirm("您确定要购买吗？");
+        if (result) {
+            window.location.href = "index.php?g=home&c=goods&a=god&id=" + id;
+        } else {
+            window.location.href = "index.php?g=home&c=index&a=goods";
+        }
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="<?php echo __ADMIN_JS__;?>jquery-1.11.1.min.js"></script>
+</head>
+<body>
+<form action="#" method="post">
+<p>修改价格：<input type="text"  id="tage1" class="form-control"></p>
+<p>修改数量：<input type="text"  id="tcourse1" class="form-control"></p>
+    <input type="submit" id="sub">
+</form>
+<script type="text/javascript">
+
+    function GetRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+    $(document).ready(function () {
+        var Request = new Object();
+        Request = GetRequest();
+        var val= Request["id"];
+
+        $("#sub").click(function () {
+            $.post(
+                'index.php?g=admin&c=pagestable&a=update1',
+                {"tage":$("#tage1").val(),"tcourse":$("#tcourse1").val(),"tid":val},
+                function(result){
+                    if(result>0){
+                        alert("修改成功！");
+                        window.location.href="index.php?g=admin&c=main&a=pagestable";
+                    }else{
+                        alert("修改失败！");
+                        window.location.href="index.php?g=admin&c=main&a=pagestable";
+                    }
+                }
+            );
+            return false;
+        });
+
+
+
+
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>跟兄弟连学PHP</title>
+    <meta name="keywords" content="商品详情"/>
+    <meta name="description" content="商品详情"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo __GOODS_CSS__;  ?>normalize.css"/>
+    <script type="text/javascript" src="<?php echo __GOODS_JS__;  ?>jquery-1.9.1.min.js"></script>
+    <script src="<?php echo __GOODS_JS__;  ?>common.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var showproduct = {
+                "boxid": "showbox",
+                "sumid": "showsum",
+                "boxw": 400,//宽度,该版本中请把宽高填写成一样
+                "boxh": 400,//高度,该版本中请把宽高填写成一样
+                "sumw": 60,//列表每个宽度,该版本中请把宽高填写成一样
+                "sumh": 60,//列表每个高度,该版本中请把宽高填写成一样
+                "sumi": 7,//列表间隔
+                "sums": 5,//列表显示个数
+                "sumsel": "sel",
+                "sumborder": 1,//列表边框，没有边框填写0，边框在css中修改
+                "lastid": "showlast",
+                "nextid": "shownext"
+            };//参数定义
+            $.ljsGlasses.pcGlasses(showproduct);//方法调用，务必在加载完后执行
+        });
+    </script>
+</head>
+<body>
+<div class="showall">
+    <!--left -->
+    <div class="showbot">
+        <div id="showbox">
+            <img src="http://img3m6.ddimg.cn/92/28/23841866-1_w_2.jpg" width="400" height="400"/>
+            <img src="https://img.alicdn.com/imgextra/i2/TB1qOcUQFXXXXaNXVXXXXXXXXXX_!!2-item_pic.png_430x430q90.jpg"
+                 width="400" height="400"/>
+            <!--<img src="<?php echo __GOODS_IMAGES__;  ?>photos/img03.png" width="400" height="400" />-->
+            <!--<img src="<?php echo __GOODS_IMAGES__;  ?>photos/img04.png" width="400" height="400" />-->
+            <!--<img src="http://img3m6.ddimg.cn/92/28/23841866-1_w_2.jpg" width="400" height="400" />-->
+            <!--<img src="<?php echo __GOODS_IMAGES__;  ?>photos/img06.png" width="400" height="400" />-->
+
+        </div><!--展示图片盒子-->
+        <div id="showsum">
+            <!--展示图片里边-->
+        </div>
+        <p class="showpage">
+            <a href="javascript:void(0);" id="showlast"> < </a>
+            <a href="javascript:void(0);" id="shownext"> > </a>
+        </p>
+    </div>
+    <!--conet -->
+    <div class="tb-property">
+        <div class="tr-nobdr">
+            <h3> 跟兄弟连学PHP</h3><br>
+            <p>细说PHP升级版，过万PHP用户选择。荣获电子工业出版社2016年度好书。</p>
+        </div>
+
+        <div class="txt">
+            <!--<li>¥99.40定价：<span class="search_pre_price">¥118.00</span>(8.43折)</li>-->
+            <div class="price_pc" id="pc-price">
+                <div class="price_d">
+                    <span class="t" id="wantujia">万图价</span>
+                    <span><p id="jiaqian">¥99.40</p></span>
+                    <ul class="size">
+                        <li>专柜价：<span class="search_pre_price">¥118.00</span>(8.43折)</li>
+                    </ul>
+                </div>
+                <!--<div class="price_zhe" id="dd-zhe">(8.43折)</div>-->
+                <!--<div class="price_m" id="original-price"><span class="yen">¥</span>118.00</div>-->
+                <div class="price_vip" style="display:none" id="dd-vip">
+                    <span></span>
+                </div>
+            </div>
+            <div class="cumulative"></div>
+        </div>
+        <div class="txt-h">
+            <!--<span class="tex-o">分类</span>-->
+            <!--<ul class="glist" id="glist" data-monitor="goodsdetails_fenlei_click">-->
+            <!--&lt;!&ndash;<li><a title="红色36g" href="">红色36g</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a title="蓝色16g" href="">红色36g</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li><a title="红色36g" href="">红色36g</a></li>-->
+            <!--<li><a title="蓝色16g" href="">红色36g</a></li>&ndash;&gt;-->
+            <!--</ul>-->
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //����ı������
+                var t = $("#text_box");
+                //��ʼ������Ϊ1,��ʧЧ��
+                $('#min').attr('disabled', true);
+                //�������Ӳ���
+                $("#add").click(function () {
+                    t.val(parseInt(t.val()) + 1)
+                    if (parseInt(t.val()) != 1) {
+                        $('#min').attr('disabled', false);
+                    }
+
+                })
+                //�������ٲ���
+                $("#min").click(function () {
+                    t.val(parseInt(t.val()) - 1);
+                    if (parseInt(t.val()) == 1) {
+                        $('#min').attr('disabled', true);
+                    }
+
+                })
+            });
+        </script>
+            <div class="gcIpt">
+                <span class="guT">数量</span>
+                <input id="min" name="" type="button" value="-"/>
+                <input id="text_box" name="" type="text" value="1"
+                       style="width:30px; text-align: center; color: #0F0F0F;"/>
+                <input id="add" name="" type="button" value="+"/>
+                <span class="Hgt">库存（99）</span>
+            </div>
+            <div class="nobdr-btns">
+                <button  onclick="aaa()" class="addcart hu" type="submit" id="sub"><img src="<?php echo __GOODS_IMAGES__;  ?>shop.png"
+                                                                       width="25" height="25"/>加入购物车
+                </button>
+                <button class="addcart yh"><img src="<?php echo __GOODS_IMAGES__;  ?>ht.png" width="25" height="25"/>立即购买
+                </button>
+            </div>
+        <div class="guarantee">
+            <span>邮费：包邮&nbsp;&nbsp;支持货到付款 <a href=""><img src="<?php echo __GOODS_IMAGES__;  ?>me.png"/></a></span>
+        </div>
+
+    </div>
+
+    <div class="extInfo">
+        <div class="brand-logo">
+            <a href="" title="厦门万图书城">
+                <img src="<?php echo __GOODS_IMAGES__;  ?>ho_03.png"/>
+            </a>
+        </div>
+        <div class="seller-pop-box">
+            <span class="tr">商家名称：国际万图书城</span>
+            <span class="tr">商家等级：高级店铺</span>
+            <span class="tr">客家电话：12345678910</span>
+            <span class="tr hoh">
+            	            		<a title="国际万图书城" href="">所在地区：厦门万图书城</a>
+            	            	</span>
+        </div>
+        <div class="seller-phone">
+            	            	<span class="pop im">
+            	            		<a href="" data-name="联系卖家"><img src="<?php echo __GOODS_IMAGES__;  ?>phon.png"/>联系卖家</a>
+            	            	</span>
+            <span class="pop in">
+            	            		<a href="" data-name="咨询卖家"><img src="<?php echo __GOODS_IMAGES__;  ?>qq.png"/>咨询卖家</a>
+            	            	</span>
+            <span class="pop in">
+            	            		<a href="" data-name="进店逛逛"><img
+                                            src="<?php echo __GOODS_IMAGES__;  ?>shop-line.png"/>进店逛逛</a>
+            	            	</span>
+            <span class="pop in">
+            	            		<a href="" data-name="关注店铺"><img src="<?php echo __GOODS_IMAGES__;  ?>staar.png"/>关注店铺</a>
+            	            	</span>
+        </div>
+        <div class="jd-service">
+            <a href="">
+                <!--<img src="<?php echo __GOODS_IMAGES__;  ?>ho_07.png"/>-->
+            </a>
+        </div>
+        <div class="suport-icons">
+            <h4>扫一扫<br/>手机下单更优惠</h4>
+            <img src="<?php echo __GOODS_IMAGES__;  ?>ho_11.jpg"/>
+        </div>
+    </div>
+</div>
+<!-- 推荐搭配 -->
+<div class="gdetail">
+
+</div>
+
+<!-- 商品介紹 -->
+<div class="gdetail">
+    <!-- left -->
+    <div class="aside" style="height: 900px;">
+        <h3>看了还看<span><img src="<?php echo __GOODS_IMAGES__;  ?>fod.png" width="22" height="22"/>换一批</span></h3>
+        <dl class="ac-mod-list">
+            <dt><a href=""><img src="<?php echo __GOODS_IMAGES__;  ?>1.jpg"/></a></dt>
+            <dd>
+                <span>￥50.8</span>
+                <p>PHP学习手册</p>
+                <p>作者:[美]David Sklar（大卫·斯克拉）</p>
+
+            </dd>
+        </dl>
+        <dl class="ac-mod-list">
+            <dt><a href=""><img src="<?php echo __GOODS_IMAGES__;  ?>2.jpg"/></a></dt>
+            <dd>
+                <span>￥50.8</span>
+                <p>PHP学习手册</p>
+                <p>作者:[美]David Sklar（大卫·斯克拉）</p>
+            </dd>
+        </dl>
+        <dl class="ac-mod-list">
+            <dt><a href=""><img src="<?php echo __GOODS_IMAGES__;  ?>3.jpg"/></a></dt>
+            <dd>
+                <span>¥121.80</span>
+                <p>东野圭吾经典套装（全四册）</p>
+                <p>作者:东野圭吾</p>
+            </dd>
+        </dl>
+    </div>
+    <!-- right -->
+    <script>
+        var detail = document.querySelector('.detail');
+        var origOffsetY = detail.offsetTop;
+
+        function onScroll(e) {
+            window.scrollY >= origOffsetY ? detail.classList.add('sticky') :
+                detail.classList.remove('sticky');
+        }
+
+        document.addEventListener('scroll', onScroll);
+    </script>
+    <div class="detail">
+        <div class="active_tab" id="outer">
+            <ul class="act_title_left" id="tab">
+                <li class="act_active">
+                    <a href="#">商品介绍</a>
+                </li>
+                <!--<li>-->
+                <!--<a href="#">商品介绍</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="#">商品评价</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="#">售后保障</a>-->
+                <!--</li>-->
+            </ul>
+            <ul class="act_title_right">
+                <li class="mui">
+                    <a id="mui-a" href="#">扫手机下单+</a>
+                </li>
+                <li class="mui-ac">
+                    <a >加入购物车</a>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div id="content" class="active_list">
+            <!--0-->
+            <div id="ui-a" class="ui-a">
+                <p>
+                    开 本：16开纸 &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;张：胶版纸包 &nbsp;&nbsp;&nbsp;&nbsp;装：平装-胶订是否套装：否&nbsp;&nbsp;&nbsp;&nbsp;国际标准书号ISBN：9787121328107<br>
+                    所属分类：<br>
+                    图书>计算机/网络>程序设计>PHP<br>
+                    编辑推荐<br>
+                    基于PHP7，深刻揭示内核原理<br>
+                    内容翔实，详细介绍PHP语言底层的实现<br>
+                    助力开发者进一步理解PHP，参与到PHP的实现中<br>
+                    <br> 编辑推荐<br>
+                    《跟兄弟连学PHP》即畅销书《细说PHP（第2版）》的全新升级版，用一年时间为本书重新录制了长达8000分钟的真人出镜的视频教程，与本版书完全配套，全面覆盖了书中的每个知识点！
+                    <br>内容简介<br>
+                    本书是畅销书《细说PHP（第2版）》升级版。PHP是当前开发Web应用系统*理想的工具，它易于使用、功能强大、成本低廉、高安全性、开发速度快且执行灵活，应用非常广泛。全书以实用为设计目标，包含PHP开发*主流的各项技术，对每一个知识点都进行了深入详细的讲解，并附有大量的实例代码，图文并茂，系统地介绍了PHP的相关技术及其在实际Web开发中的应用。
+                    本书是《细说PHP》第三版，全书共6个部分，分为32个章节，每章都是PHP独立知识点的总结。内容涵盖了动态网站开发的前端技术（HTML5）、企业现在主流应用版本PHP
+                    5.4为主的语法、PHP的常用功能模块和实用技巧、MySQL数据库的设计与应用、PHP
+                    面向对象的程序设计思想、数据库抽象层PDO、Smarty模板技术、Web开发的设计模式、自定义PHP技术框架**版BroPHP
+                    2.0、重新开发包括完整流程的极具参考价值的Web项目（BroShop）等内容。每章都有大量的实用示例及详尽的注释，以加速读者的理解和学习，同时为每章的技术点设置了大量的自测试题。*重要的是本书全部内容都有精心录制的配套教学视频覆盖，视频中真人出镜、师生互动、讲解生动、操作性强，并且多数技术概念以微电影形式穿插在视频中进行讲解说明。
+                    对于PHP应用开发的新手而言，本书不失为一本好的入门教材，内容既实用又全面，所有实例都可以在开发中直接应用，并辅以大量的视频教程，使读者轻松掌握所学知识。另外，本书也适合有一定基础的网络开发人员和网络爱好者，以及大中专院校的师生阅读与参考。不仅可以作为PHP开发的学习用书，还可以作为从事Web开发的程序员的参考用书和必备手册。对于行家来说，本书也是一本难得的参考手册，读者必将从中获益。
+                    <br><br>作者简介<br>
+                    兄弟连IT教育，成立于2006年，中国PHP培训领导者，九年专注PHP教育，所发布的PHP视频教程，出版的PHP图书，开设的PHP培训班，推动了国内PHP技术发展，培养了众多的PHP程序员，堪称PHP程序员的黄埔军校。
+                    <br><br>目　　录<br><br>
+                    第1部分 Web开发入门篇<br>
+                    第1章 LAMP网站构建 2<br>
+                    1.1 介绍Web给你认识 2<br>
+                    1.1.1 Web应用的优势 3<br>
+                    1.1.2 Web 2.0时代的互联网 4<br>
+                    1.1.3 Web开发标准 6<br>
+                    1.1.4 认识脚本语言 7<br>
+                    1.2 动态网站开发所需的Web构件 7<br>
+                    1.2.1 客户端浏览器 8<br>
+                    1.2.2 超文本标记语言（HTML） 9<br>
+                    1.2.3 层叠样式表（CSS） 10<br>
+                    1.2.4 客户端脚本编程语言JavaScript 11<br>
+                    1.2.5 Web服务器 11<br>
+                    1.2.6 服务器端编程语言 12<br>
+
+                    <br>前　　言<br>
+                    跟兄弟连学PHP<br><br>
+
+
+                    《跟兄弟连学PHP》即畅销书《细说PHP（第2版）》的全新升级版，是兄弟连对开源领域的重要贡献之一，相信本书会延续前两版的火爆，成为大家学习PHP的好帮手。
+                    <br>我是兄弟连IT教育（itxdl.cn）的创始人李超，兄弟连是我在2006年年底创办的，到现在已经是第9个年头了。兄弟连是国内管理*严格的IT学校之一，也是国内**的PHP培训机构之一。<br>
+                    <br><br>价格说明<br>
+                    当当价：为商品的销售价，具体的成交价可能因会员使用优惠券、积分等发生变化，最终以订单结算页价格为准。<br>
+                    划线价：划线价格可能是图书封底定价、商品吊牌价、品牌专柜价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品曾经展示过的销售价等，由于地区、时间的差异化和市场行情波动，商品吊牌价、品牌专柜价等可能会与您购物时展示的不一致，该价格仅供您参考。<br>
+                    折扣：折扣指在划线价（图书定价、商品吊牌价、品牌专柜价、厂商指导价等）某一价格基础上计算出的优惠比例或优惠金额。如有疑问，您可在购买前联系客服咨询。<br>
+                    异常问题：如您发现活动商品销售价或促销信息有异常，请立即联系我们补正，以便您能顺利购物。<br><br><br><br></p>
+
+                </p>
+
+            </div>
+            <!--商品规格-->
+            <div id="bit" class="bit">
+                <ul style="display:none;">
+                    <!--<li><img src="<?php echo __GOODS_IMAGES__;  ?>ko-1.jpg"/></li>-->
+                    <!--<li><img src="<?php echo __GOODS_IMAGES__;  ?>ko-2.jpg"/></li>-->
+                    <!--<li><img src="<?php echo __GOODS_IMAGES__;  ?>ko.jpg"/></li>-->
+                    <!--<li><img src="<?php echo __GOODS_IMAGES__;  ?>ko-1.jpg"/></li>-->
+                    <!--<li><img src="<?php echo __GOODS_IMAGES__;  ?>ko-2.jpg"/></li>-->
+
+                </ul>
+            </div>
+
+            <!--商品评价-->
+
+            <div id="ui-c" class="ui-c">
+                <ul style="display:none;">
+
+                </ul>
+            </div>
+            <!--售后保障-->
+            <div id="uic" class="uic">
+                <ul style="display:none;">
+                    <!--<p>商品名称：仙人指路道镜前后双录智能后视镜导航仪行车记录仪后视预警一体机</p>-->
+                    <!--<p>商品编号：ECS001983</p>-->
+                    <!--<p>品牌:威力马哈国产</p>-->
+                    <!--<p>上架时间：2016-05-24</p>-->
+                    <!--<span><img src="<?php echo __GOODS_IMAGES__;  ?>ko-1.jpg"/></span>-->
+                    <!--<span><img src="<?php echo __GOODS_IMAGES__;  ?>ko-2.jpg"/></span>-->
+                </ul>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                window.onload = function () {
+                    var $li = $('#tab li');
+                    var $ul = $('#content ul');
+
+                    $li.mouseover(function () {
+                        var $this = $(this);
+                        var $t = $this.index();
+                        $li.removeClass();
+                        $this.addClass('act_active');
+                        $ul.css('display', 'none');
+                        $ul.eq($t).css('display', 'block');
+                    })
+                }
+            });
+        </script>
+    </div>
+</div>
+
+<!--ajax提交数据-->
+<script type="text/javascript">
+    function aaa() {
+        $.post( //ajax的POST方法提交数据
+            'index.php?g=home&c=cart&a=getGoods1', //查看数组是否成功数组页面
+            function (result) { //3.回调函数； function (返回一个数据：result)
+                if (result.errno == 200) {
+                    alert(result.mess + "\n点击确认后进入到商品列表");
+                    window.location.href = "index.php?g=home&c=index&a=list";
+                } else {
+                    alert(result.mess + "\n点击确认后重新添加商品");
+                    window.location.href = "index.php?g=home&c=index&a=index1";
+                }
+            },
+            "json" //4.指定返回数据类型
+        );
+        return false;//不让他提交
+    }
+
+</script>
+
+</body>
+</html>

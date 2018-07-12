@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title> PHP从入门到精通（第4版）</title>
+    <meta name="keywords" content="PHP从入门到精通（第4版）"/>
+    <meta name="description" content="PHP从入门到精通（第4版）"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo __GOODS_CSS__;  ?>normalize.css"/>
+    <script type="text/javascript" src="<?php echo __GOODS_JS__;  ?>jquery-1.9.1.min.js"></script>
+    <script src="<?php echo __GOODS_JS__;  ?>common.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var showproduct = {
+                "boxid": "showbox",
+                "sumid": "showsum",
+                "boxw": 400,//宽度,该版本中请把宽高填写成一样
+                "boxh": 400,//高度,该版本中请把宽高填写成一样
+                "sumw": 60,//列表每个宽度,该版本中请把宽高填写成一样
+                "sumh": 60,//列表每个高度,该版本中请把宽高填写成一样
+                "sumi": 7,//列表间隔
+                "sums": 5,//列表显示个数
+                "sumsel": "sel",
+                "sumborder": 1,//列表边框，没有边框填写0，边框在css中修改
+                "lastid": "showlast",
+                "nextid": "shownext"
+            };//参数定义
+            $.ljsGlasses.pcGlasses(showproduct);//方法调用，务必在加载完后执行
+        });
+    </script>
+</head>
+<body>
+<div class="showall">
+    <!--left -->
+    <div class="showbot">
+        <div id="showbox">
+            <img src="http://img3m9.ddimg.cn/46/16/25086349-1_w_1.jpg" width="320" height="320"/>
+            <img src="http://img3m9.ddimg.cn/46/16/25086349-2_w_2.jpg" width="400" height="400"/>
+        </div><!--展示图片盒子-->
+        <div id="showsum">
+            <!--展示图片里边-->
+        </div>
+        <p class="showpage">
+            <a href="javascript:void(0);" id="showlast"> < </a>
+            <a href="javascript:void(0);" id="shownext"> > </a>
+        </p>
+    </div>
+    <!--conet -->
+    <div class="tb-property">
+        <div class="tr-nobdr">
+            <h3> PHP从入门到精通（第4版）</h3><br>
+            <p style=" color: #323232;">新版上市！120000读者口碑相传 31次印刷 25小时视频 808个经典实例 15项面试真题
+                626项测试 php 入门 框架 范例 案例 视频教程 长期位居 php mysql 开发 培训排行榜前</p>
+        </div>
+        <div class="txt">
+            <div class="price_pc" id="pc-price">
+
+                <div class="price_d">
+                    <span class="t" id="wantujia">万图价</span>
+                    <span><p id="jiaqian">¥59.00</p></span>
+                    <ul class="size">
+                        <li>专柜价：<span class="search_pre_price">¥78.80</span>(7.4折)</li>
+                    </ul>
+                </div>
+                <div class="price_vip" style="display:none" id="dd-vip">
+                    <span></span>
+                </div>
+            </div>
+            <div class="cumulative"></div>
+        </div>
+        <div class="txt-h">
+        </div>
+        <script>
+            $(document).ready(function () {
+                //����ı������
+                var t = $("#text_box");
+                //��ʼ������Ϊ1,��ʧЧ��
+                $('#min').attr('disabled', true);
+                //�������Ӳ���
+                $("#add").click(function () {
+                    t.val(parseInt(t.val()) + 1)
+                    if (parseInt(t.val()) != 1) {
+                        $('#min').attr('disabled', false);
+                    }
+
+                })
+                //�������ٲ���
+                $("#min").click(function () {
+                    t.val(parseInt(t.val()) - 1);
+                    if (parseInt(t.val()) == 1) {
+                        $('#min').attr('disabled', true);
+                    }
+
+                })
+            });
+        </script>
+        <div class="gcIpt">
+            <span class="guT">数量</span>
+            <input id="min" name="" type="button" value="-"/>
+            <input id="text_box" name="" type="text" value="1" style="width:30px; text-align: center; color: #0F0F0F;"/>
+            <input id="add" name="" type="button" value="+"/>
+            <span class="Hgt">库存（99）</span>
+        </div>
+        <div class="nobdr-btns">
+            <button onclick="aaa()" class="addcart hu"><img src="<?php echo __GOODS_IMAGES__;  ?>shop.png" width="25" height="25"/>加入购物车
+            </button>
+            <button class="addcart yh"><img src="<?php echo __GOODS_IMAGES__;  ?>ht.png" width="25" height="25"/>立即购买
+            </button>
+        </div>
+        <div class="guarantee">
+            <span>邮费：包邮&nbsp;&nbsp;支持货到付款 <a href=""><img src="<?php echo __GOODS_IMAGES__;  ?>me.png"/></a></span>
+        </div>
+    </div>
+
+    <div class="extInfo">
+        <div class="brand-logo">
+            <a href="" title="厦门万图书城">
+                <img src="<?php echo __GOODS_IMAGES__;  ?>ho_03.png"/>
+            </a>
+        </div>
+        <div class="seller-pop-box">
+            <span class="tr">商家名称：国际万图书城</span>
+            <span class="tr">商家等级：高级店铺</span>
+            <span class="tr">客家电话：12345678910</span>
+            <span class="tr hoh">
+            	            		<a title="国际万图书城" href="">所在地区：厦门万图书城</a>
+            	            	</span>
+        </div>
+        <div class="seller-phone">
+            	            	<span class="pop im">
+            	            		<a href="" data-name="联系卖家"><img src="<?php echo __GOODS_IMAGES__;  ?>phon.png"/>联系卖家</a>
+            	            	</span>
+            <span class="pop in">
+            	            		<a href="" data-name="咨询卖家"><img src="<?php echo __GOODS_IMAGES__;  ?>qq.png"/>咨询卖家</a>
+            	            	</span>
+            <span class="pop in">
+            	            		<a href="" data-name="进店逛逛"><img
+                                            src="<?php echo __GOODS_IMAGES__;  ?>shop-line.png"/>进店逛逛</a>
+            	            	</span>
+            <span class="pop in">
+            	            		<a href="" data-name="关注店铺"><img src="<?php echo __GOODS_IMAGES__;  ?>staar.png"/>关注店铺</a>
+            	            	</span>
+        </div>
+        <div class="jd-service">
+            <a href="">
+                <!--<img src="<?php echo __GOODS_IMAGES__;  ?>ho_07.png"/>-->
+            </a>
+        </div>
+        <div class="suport-icons">
+            <h4>扫一扫<br/>手机下单更优惠</h4>
+            <img src="<?php echo __GOODS_IMAGES__;  ?>ho_11.jpg"/>
+        </div>
+    </div>
+</div>
+<!-- 推荐搭配 -->
+<div class="gdetail"></div>
+
+<!-- 商品介紹 -->
+<div class="gdetail">
+    <!-- left -->
+    <div class="aside" style="height: 900px;">
+        <h3>看了还看<span><img src="<?php echo __GOODS_IMAGES__;  ?>fod.png" width="22" height="22"/>换一批</span></h3>
+        <li class="ac-mod-list" style="border-bottom: 1px dotted #ccc; margin-bottom:1px;" ;>
+            <dt><a href=""><img src="<?php echo __GOODS_IMAGES__;  ?>3.jpg" style="padding-top: 10px;"/></a></dt>
+            <dd>
+                <span>¥121.80</span>
+                <p>东野圭吾经典套装（全四册）</p>
+                <p style="padding-bottom: 10px;padding-top: 10px;">作者:东野圭吾</p>
+            </dd>
+        </li>
+        <li class="ac-mod-list" style="border-bottom: 1px dotted #ccc; margin-bottom:1px;" ;>
+            <dt><a href=""><img src="<?php echo __GOODS_IMAGES__;  ?>1.jpg" style="padding-top: 10px;"/></a></dt>
+            <dd>
+                <span>￥50.8</span>
+                <p>PHP学习手册</p>
+                <p style="padding-bottom: 10px;padding-top: 10px;">作者:[美]David Sklar（大卫·斯克拉）</p>
+            </dd>
+        </li>
+        <dl class="ac-mod-list">
+            <dt><a href=""><img src="<?php echo __GOODS_IMAGES__;  ?>2.jpg" style="padding-top: 10px;"/></a></dt>
+            <dd>
+                <span>￥50.8</span>
+                <p>PHP学习手册</p>
+                <p style="padding-bottom: 10px;padding-top: 10px;">作者:[美]David Sklar（大卫·斯克拉）</p>
+            </dd>
+        </dl>
+    </div>
+    <!-- right -->
+    <script>
+        var detail = document.querySelector('.detail');
+        var origOffsetY = detail.offsetTop;
+
+        function onScroll(e) {
+            window.scrollY >= origOffsetY ? detail.classList.add('sticky') :
+                detail.classList.remove('sticky');
+        }
+
+        document.addEventListener('scroll', onScroll);
+    </script>
+    <div class="detail">
+        <div class="active_tab" id="outer">
+            <ul class="act_title_left" id="tab">
+                <li class="act_active">
+                    <a href="#">商品介绍</a>
+                </li>
+            </ul>
+            <ul class="act_title_right">
+                <li class="mui">
+                    <a id="mui-a" href="#">扫手机下单+</a>
+                </li>
+                <li class="mui-ac">
+                    <a href="#">加入购物车</a>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div id="content" class="active_list">
+            <!--0-->
+            <div id="ui-a" class="ui-a">
+                开 本：16开纸 &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;张：胶版纸包&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;装：平装-胶订是否套装：否&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;国际标准书号ISBN：9787121328107<br>
+                所属分类：
+                图书>计算机/网络>程序设计>PHP<br>
+                编辑推荐<br>
+                基于PHP7，深刻揭示内核原理<br>
+                内容翔实，详细介绍PHP语言底层的实现<br>
+                助力开发者进一步理解PHP，参与到PHP的实现中<br><br>
+
+                <p>&nbsp; &nbsp;&nbsp;“软件开发视频大讲堂”丛书系清华社“视频大讲堂”重点大系之一。该大系包括多个子系列，每个子系列的图书在其同品种的图书中销售名列前茅，其中：</p>
+                <p>4个品种荣获“全行业优秀畅销品种”</p>
+                <p>1个品种荣获2012年清华大学出版社“专业畅销书”一等奖</p>
+                <p>绝大多数品种在“全国计算机零售图书排行榜”同品种排行中名列前茅</p>
+                <p>截至目前该大系累计销售超过130万册</p>
+                <p>该大系已成为近年来清华社计算机专业基础类零售图书畅销品牌之一</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;“软件开发视频大讲堂”系列作为清华社“视频大讲堂”大系的子系列之一，继承和创新了清华社“视频大讲堂”大系的编写模式、写作风格和优良品质。本书突出了以下内容：</p>
+                <p>总长总时长25小时同步视频演示讲解，可反复观摩，让学习更为快捷、高效</p>
+                <p>15个典型实例，通过实例学习更深入，更有趣，更有动力</p>
+                <p>342道面试真题，了解工作实例及面试问题，更好适应企业需求</p>
+                <p>626项能力测试题目，检测是否过关，了解学习之不足。</p>
+                <p>根据全国计算机零售图书排行榜，本书长期在php类全国零售排行前列</p>
+                <p>&nbsp;</p>
+                <p>“软件开发视频大讲堂”系列作为清华社“视频大讲堂”大系的子系列之一，执着于专业，精细于品质。</p>
+                <p>集基础知识、核心技能、高级应用、项目案例于一体</p>
+                <p>好学、好用、高效&nbsp;</p>
+
+                <br><br>内容简介<br><br>
+                <img src="http://img54.ddimg.cn/99999990002191164.jpg" style="display: block;"><br>
+
+                价格说明<br>
+                当当价：为商品的销售价，具体的成交价可能因会员使用优惠券、积分等发生变化，最终以订单结算页价格为准。<br>
+                划线价：划线价格可能是图书封底定价、商品吊牌价、品牌专柜价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品曾经展示过的销售价等，由于地区、时间的差异化和市场行情波动，商品吊牌价、品牌专柜价等可能会与您购物时展示的不一致，该价格仅供您参考。<br>
+                折扣：折扣指在划线价（图书定价、商品吊牌价、品牌专柜价、厂商指导价等）某一价格基础上计算出的优惠比例或优惠金额。如有疑问，您可在购买前联系客服咨询。<br>
+                异常问题：如您发现活动商品销售价或促销信息有异常，请立即联系我们补正，以便您能顺利购物。<br><br><br><br></p>
+
+            </div>
+            <!--商品规格-->
+            <div id="bit" class="bit">
+                <ul style="display:none;">
+                </ul>
+            </div>
+
+            <!--商品评价-->
+
+            <div id="ui-c" class="ui-c">
+                <ul style="display:none;">
+
+                </ul>
+            </div>
+            <!--售后保障-->
+            <div id="uic" class="uic">
+                <ul style="display:none;">
+                </ul>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                window.onload = function () {
+                    var $li = $('#tab li');
+                    var $ul = $('#content ul');
+
+                    $li.mouseover(function () {
+                        var $this = $(this);
+                        var $t = $this.index();
+                        $li.removeClass();
+                        $this.addClass('act_active');
+                        $ul.css('display', 'none');
+                        $ul.eq($t).css('display', 'block');
+                    })
+                }
+            });
+        </script>
+    </div>
+</div>
+
+<!--ajax提交数据-->
+<script type="text/javascript">
+    function aaa() {
+        $.post(
+            'index.php?g=home&c=cart&a=getGoods4',
+            function (result) {
+                if (result.errno == 200) {
+                    alert(result.mess+ "\n点击确认返回商品列表");
+                    window.location.href = 'index.php?g=home&c=index&a=list';
+                } else {
+                    alert(result.mess + "\n点击确认重新添加商品");
+                    window.location.href = 'index.php?a=home&c=index&a=index4';
+                }
+            },
+            "json"
+        );
+        return false;
+    }
+</script>
+</body>
+</html>

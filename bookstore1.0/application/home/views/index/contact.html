@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Contact</title>
+<link href="<?php echo __HOME_CSS__ ;?>bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="<?php echo __HOME_JS__ ;?>jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="<?php echo __HOME_CSS__ ;?>style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Training Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="<?php echo __HOME_JS__ ;?>move-top.js"></script>
+<script type="text/javascript" src="<?php echo __HOME_JS__ ;?>easing.js"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+<!-- //end-smoth-scrolling -->
+<script src="<?php echo __HOME_JS__ ;?>bootstrap.min.js"></script>
+</head>
+<body>
+<!--header start here-->
+<div class="banner1">
+	<!--引入公共代码-->
+	<?php include_once __HOME_COMMON__."index_header.html"; ?>
+
+	<!--//header-bottom-->
+</div>
+<!--header strat here-->
+<!--contact start here-->
+<div class="contact">
+	<div class="container">
+		<div class="contact-main">
+			<div class="col-md-6 contact-left">
+				<div class="contact-top">
+					<h2>Contact Info</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+			    </div>
+				<div class="conta-1">
+					<div class="con-phone">
+						<span class="con-ph"> </span>
+						<div class="con-para">
+							<h6>Phone</h6>
+							<p>+715 69 87 18</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+				<div class="conta-2">
+					<div class="con-address">
+						<span class="con-location"> </span>
+						<div class="con-para">
+							<h6>Address</h6>
+							<p>Latin literature from 45 BC</p>
+						</div>
+					</div>
+				</div>
+			 </div>
+			<div class="col-md-6 contact-right">
+				<div class="contact-top">
+					<h3>Send a Message</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+				</div>
+				<form>
+						<input type="text" class="shart" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
+					 	<input type="text" class="shart" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+					 	<input type="text" class="long" value="Subject" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}">
+				         <textarea value="Message" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+                        <input type="submit" value="Submit">
+				</form>
+				</div>
+		  <div class="clearfix"> </div>
+		</div>
+		<div class="map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"> </iframe>
+		</div>
+	</div>
+</div>
+<!--contact end here-->
+<!--引入公共代码-->
+<?php include_once __HOME_COMMON__."index_footer.html"; ?>
+
+<!--//header-bottom-->
+<!--/copy rights-->
+</body>
+</html>

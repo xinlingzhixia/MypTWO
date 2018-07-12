@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<!-- Head -->
+<head>
+    <title>登录表单</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- //Meta-Tags -->
+    <script type="text/javascript" src="<?php echo __LOGIN_JS__;?>jquery-1.11.1.min.js"></script>
+    <!-- Style -->
+    <link rel="stylesheet" href="<?php echo __LOGIN_CSS__;?>style.css" type="text/css" media="all">
+</head>
+<!-- //Head -->
+<!-- Body -->
+<body>
+<!--<h1>登录表单</h1>-->
+<div class="container" style="margin-top: 180px;">
+    <div class="login ">
+        <h2>登 陆</h2>
+        <form action="#" method="post" id="loginform" class="fh5co-form animate-box" data-animate-effect="fadeIn">
+            <!--点回来还原成英文 ，.focus聚焦(function ()-->
+            <div class="form-group">
+                <div class="alert alert-success" id="alertmess" role="alert">Your info has been saved.</div>
+            </div>
+            <input type="text" class="form-control" name="uname" id="uname" placeholder="用户名" autocomplete="off">
+            <input type="password" class="form-control" name="upwd" id="upwd" placeholder="密码" autocomplete="off">
+        </form>
+        <ul class="form-group">
+            <li>
+                <input type="checkbox" id="remember" value="" name="remember">
+                <label for="remember"><span></span>记住我</label>
+                <span>新用户?&nbsp&nbsp<a href="index.php?g=home&c=login&a=signup">注册</a> |
+                    <a href="index.php?g=home&c=login&a=forgot">忘记密码?</a></span>
+            </li>
+            <!--<div class="form-group">-->
+            <!--<label for="remember"><input type="checkbox" name="remember" id="remember">记住我</label>-->
+            <!--</div>-->
+        </ul>
+        <div class="send-button ">
+            <form>
+                <input type="submit" id="loginbtn" value="登 陆" class="btn btn-primary">
+            </form>
+        </div>
+        <!--<a href="#">记住密码?</a>-->
+
+        <div class="clear"></div>
+    </div>
+    <div class="copyrights">Collect from <a href=""></a></div>
+
+    <div class="clear"></div>
+
+</div>
+
+<div class="footer w3layouts agileits">
+    <p>Copyright &copy; More Templates <a href="http://www.cssmoban.com/" target="_blank" title="万图书城">万图书城</a> -
+        Collect from <a href="http://www.cssmoban.com/" title="万图书城" target="_blank">万图书城</a></p>
+</div>
+<!--登陆客户端验证-->
+<script type="text/javascript">
+    $(function () {
+
+        /**表单客户端验证*/
+        function check() {
+            var flag = true;
+            $("#uname").blur(function () {
+                if ($(this).val() == "") {
+                    $("#alertmess").html("用户名不允许为空！");
+                    flag = false;
+                    return;
+                }
+
+            }).focus(function () {
+                $("#alertmess").html("Your info has been saved.");
+            });
+
+            $("#upwd").blur(function () {
+                if ($(this).val() == "") {
+                    $("#alertmess").html("密码不允许为空！");
+                    flag = false;
+                    return;
+                }
+            }).focus(function () {
+                $("#alertmess").html("Your info has been saved.");
+            });
+            return true;
+        }
+
+
+        $(function () {
+            if (!check()) {
+                return false
+            }
+            //点击提交按钮
+            $("#loginbtn").click(function () {
+                if (!check()) {
+                    return false
+                }
+                $.post(
+                    'index.php?g=home&c=user&a=login',
+                    $("#loginform").serialize(),
+                    function (result) {
+                        if (result.errno == 200) {
+                            alert(result.mess + "\n点击确认进入首页!");
+                            window.location.href = "index.php";
+                        } else {
+                            $("#alertmess").html(result.mess);
+                        }
+                    },
+                    "json"
+                );
+                //$("#regform")[0].reset();
+                return false;
+            });
+        })
+    });
+
+</script>
+</body>
+<!-- //Body -->
+
+</html>

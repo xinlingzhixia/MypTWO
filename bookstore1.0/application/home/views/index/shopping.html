@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="banner1">
+    <!--引入公共代码-->
+    <?php include_once __HOME_COMMON__."index_header.html"; ?>
+    <!--//header-bottom-->
+</div>
+<div style='width:800px;float:none'>
+    <h1>商品列表</h1>
+    <!--    显示当前系统时间-->
+    <h3><p id="demo"></p>
+        <script>
+            var myVar = setInterval(function () {
+                myTimer()
+            }, 1000);
+
+            function myTimer() {
+                var d = new Date();
+
+            }
+        </script>
+    </h3>
+    <form method="get" action="">
+        <table style="100%">
+            <tr>
+                <td><select name="gid">
+                    <option value="0">请选择商品</option>
+                    <?php
+                        function show($fid,$i)
+                        {
+                            global $mysqli;
+                            $sql = "select *from goodstype where fid=$fid";
+                            $result = $mysqli->query($sql);
+                    $str=" ";
+                    $i++;
+                    for($n=1;$n<$i;$n++) {
+                    $str .= "---";
+                    }
+                    $id=$_GET["gid"];
+                    ?>
+                    <?php
+                            while ($row = $result->fetch_assoc()) {
+                    ?>
+
+                    <option
+                    <?php if($id==$row['id']){echo "selected";}?> id="<?php echo $str.$row["classname"] ?>"
+                    value="<?php echo $row["id"] ?>">
+                    <?php echo $str.$row["classname"] ?>
+                    </option>
+                    <?php
+                                show($fid=$row["id"],$i);
+                                ?>
+                    <?php
+                            }
+                        }
+                        show(0,0);
+                        ?>
+                    <input id="select" type="submit" value="查询"></select></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div style="float: none;width: 600px">
+    <?php
+    $id=isset($_GET["gid"])?$id=$_GET["gid"]:0;
+    if(!empty($id)){
+        $sql="select *from goods where goodstypefid=$id or goodstypefstr like '%$id%' and checkinfo=1 and delstate=0";
+    }else{
+        $sql="select *from goods";
+    }
+    $result=$mysqli->query($sql);
+    ?>
+    <table>
+        <tr>
+            <?php
+            while($row=$result->fetch_assoc()){
+            ?>
+            <td>
+                <image width="200px" height="200px" src="<?php echo $row[" picurl
+                "]?>"></image>
+                <a title="查看商品详细信息" href="goodsshow.php?id=<?php echo $row[" id"]?>"><?php echo $row["title"]?></a>
+            </td>
+            <?php
+            }
+            ?>
+        </tr>
+    </table>
+</div>
+<!--引入公共代码-->
+<?php include_once __HOME_COMMON__."index_footer.html"; ?>
+<!--//header-bottom-->
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<meta charset="utf-8">
+	<title>书籍库存</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="<?php echo __ADMIN_CSS__;?>style.css" media="all" />
+	<link href="<?php echo __ADMIN_CSS__;?>bootstrap.min.css" rel="stylesheet">
+	<link href="<?php echo __ADMIN_CSS__;?>datepicker3.css" rel="stylesheet">
+	<link href="<?php echo __ADMIN_CSS__;?>bootstrap-table.css" rel="stylesheet">
+	<link href="<?php echo __ADMIN_CSS__;?>styles.css" rel="stylesheet">
+
+
+	<style type="text/css">
+		a:hover{
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body style="padding-top: 0px;height: 0px";>
+<!-- 顶部导航栏公共代码-->
+<?php include_once __ADMIN_COMMON__."main_top.html"; ?>
+<!-- 左侧导航栏公共代码-->
+<?php include_once __ADMIN_COMMON__."main_aside.html"; ?>
+
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+	<div class="row">
+		<div class="col-lg-12" style="padding-left: 0px;padding-right: 5px">
+			<div class="panel panel-default">
+				<div class="panel-heading">书籍库存管理</div>
+				<table id="table" data-show-refresh="true" data-show-toggle="true" data-show-columns="true"
+					   data-search="true"></table>
+			</div>
+		</div>
+	</div>
+
+	<!--<div class="row">-->
+		<!--&lt;!&ndash;<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">添加教师</button>&ndash;&gt;-->
+		<!--&lt;!&ndash; 更改数据模态框（Modal） &ndash;&gt;-->
+		<!--<div class="modal fade" id="chModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
+			<!--<div class="modal-dialog">-->
+				<!--<div class="modal-content">-->
+					<!--<div class="modal-header">-->
+						<!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+						<!--<h2 class="modal-title" id="myModalLabel1">修改书籍表</h2>-->
+					<!--</div>-->
+					<!--<div class="modal-body">-->
+						<!--<form action="#" method="post" id="teacherform1">-->
+							<!--<p>修改价格：<input type="text" name="tage" id="tage1" class="form-control"></p>-->
+							<!--<p>修改数量：<input type="text" name="tcourse" id="tcourse1" class="form-control"></p>-->
+							<!--<input type="submit" id="sub1" class="btn btn-primary btn-md">-->
+							<!--<input type="reset" id="ret1" class="btn btn-primary btn-md">-->
+						<!--</form>-->
+					<!--</div>-->
+				<!--</div>&lt;!&ndash; /.modal-content &ndash;&gt;-->
+			<!--</div>&lt;!&ndash; /.modal &ndash;&gt;-->
+		<!--</div>-->
+	<!--</div>-->
+</div>
+
+<script src="<?php echo __ADMIN_JS__;?>jquery-1.11.1.min.js"></script>
+<script src="<?php echo __ADMIN_JS__;?>bootstrap.min.js"></script>
+<script src="<?php echo __ADMIN_JS__;?>chart.min.js"></script>
+<script src="<?php echo __ADMIN_JS__;?>chart-data.js"></script>
+<script src="<?php echo __ADMIN_JS__;?>easypiechart.js"></script>
+<script src="<?php echo __ADMIN_JS__;?>easypiechart-data.js"></script>
+<script src="<?php echo __ADMIN_JS__;?>bootstrap-datepicker.js"></script>
+<script src="<?php echo __ADMIN_JS__;?>bootstrap-table.js"></script>
+
+
+<script type="text/javascript">
+
+    $("#table").bootstrapTable({ // 对应table标签的id
+        url: "index.php?g=admin&c=pagestable&a=list",
+        cache: false, // 设置为 false 禁用 AJAX 数据缓存， 默认为true
+        striped: true,  //表格显示条纹，默认为false
+        pagination: true, // 在表格底部显示分页组件，默认false
+        pageList: [10, 20], // 设置页面可以显示的数据条数
+        pageSize: 10, // 页面数据条数
+        pageNumber: 1, // 首页页码
+        sidePagination: 'server', // 设置为服务器端分页
+        queryParams: function (params) { // 请求服务器数据时发送的参数，可以在这里添加额外的查询参数，返回false则终止请求
+            return {
+                pageSize: params.limit, // 每页要显示的数据条数
+                pageIndex: (params.offset / params.limit) + 1,//页码
+                like: params.search //模糊查询的条件
+            }
+        },
+        columns: [
+            {
+                checkbox: true, // 显示一个勾选框
+                title: 'ID',
+                field: 'id', // 返回json数据中的name
+                align: 'center', // 居中显示
+
+            }, {
+                field: 'bname', // 返回json数据中的name
+                title: '书本名字', // 表格表头显示文字
+                align: 'center', // 左右居中
+                valign: 'middle', // 上下居中
+                width: 120
+            }, {
+                field: 'aid',
+                title: '作者',
+                align: 'center',
+                valign: 'middle',
+                width: 160
+            }, {
+                field: 'price',
+                title: '价格',
+                align: 'center',
+                valign: 'middle',
+                width: 160
+            }, {
+                field: 'quantity',
+                title: '数量',
+                align: 'center',
+                valign: 'middle',
+				width:160
+            }, {
+                title: "操作",
+                align: 'center',
+                valign: 'middle',
+                width: 140, // 定义列的宽度，单位为像素px
+                formatter: function (value, row, index) {
+                    return '<button class="btn btn-primary btn-sm" onclick="del(\'' + row.id + '\')">删除</button>' +  "\n"+
+						'<button class="btn btn-primary btn-sm" onclick="edit(\'' + row.id + '\')">修改</button>';
+                }
+            }
+        ],
+        onLoadSuccess: function () {  //加载成功时执行
+
+        },
+        onLoadError: function () {  //加载失败时执行
+            console.info("加载数据失败");
+        }
+    })
+
+    function del(id) {
+        var result = confirm("确认要删除该条数据吗？");
+        if (result) {
+            window.location.href = "index.php?g=admin&c=pagestable&a=del&id=" + id;
+        }else {
+            window.location.href = "index.php?g=admin&c=main&a=pagestable";
+        }
+    }
+    //修改
+    function edit(id) {
+
+
+        window.location.href="index.php?g=admin&c=main&a=edit&id="+id;
+
+        // $('#chModal').modal('toggle');
+        // $("#sub1").click(function () {
+        //     $.post(
+        //         'index.php?g=admin&c=book&a=update',
+        //         {"tage":$("#tage1").val(),"tcourse":$("#tcourse1").val(),"tid":id},
+        //         function (result) {
+        //
+        //             if(result.errno==200){
+        //                 alert(result.mess);
+        //                 window.location.reload();
+        //             }else{
+        //                 alert(result.mess);
+        //                 window.location.reload();
+        //             }
+        //         },
+        //         'json'
+        //     );
+        //     return false;
+        // });
+    }
+</script>
+</body>
+</html>

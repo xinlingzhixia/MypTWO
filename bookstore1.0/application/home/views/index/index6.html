@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>高性能PHP 7首著问世 宇宙至强语言迎来重大版本升级</title>
+    <meta name="keywords" content="高性能PHP 7首著问世 宇宙至强语言迎来重大版本升级"/>
+    <meta name="description" content="高性能PHP 7首著问世 宇宙至强语言迎来重大版本升级"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo __GOODS_CSS__;  ?>normalize.css"/>
+    <script type="text/javascript" src="<?php echo __GOODS_JS__;  ?>jquery-1.9.1.min.js"></script>
+    <script src="<?php echo __GOODS_JS__;  ?>common.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var showproduct = {
+                "boxid": "showbox",
+                "sumid": "showsum",
+                "boxw": 400,//宽度,该版本中请把宽高填写成一样
+                "boxh": 400,//高度,该版本中请把宽高填写成一样
+                "sumw": 60,//列表每个宽度,该版本中请把宽高填写成一样
+                "sumh": 60,//列表每个高度,该版本中请把宽高填写成一样
+                "sumi": 7,//列表间隔
+                "sums": 5,//列表显示个数
+                "sumsel": "sel",
+                "sumborder": 1,//列表边框，没有边框填写0，边框在css中修改
+                "lastid": "showlast",
+                "nextid": "shownext"
+            };//参数定义
+            $.ljsGlasses.pcGlasses(showproduct);//方法调用，务必在加载完后执行
+        });
+    </script>
+</head>
+<body>
+<div class="showall">
+    <!--left -->
+    <div class="showbot">
+        <div id="showbox">
+            <img src="http://img3m7.ddimg.cn/41/24/24189107-1_w_6.jpg" width="320" height="320"/>
+            <!--<img src="http://img3m9.ddimg.cn/46/16/25086349-2_w_2.jpg" width="400" height="400"/>-->
+        </div><!--展示图片盒子-->
+        <div id="showsum">
+            <!--展示图片里边-->
+        </div>
+        <p class="showpage">
+            <a href="javascript:void(0);" id="showlast"> < </a>
+            <a href="javascript:void(0);" id="shownext"> > </a>
+        </p>
+    </div>
+    <!--conet -->
+    <div class="tb-property">
+        <div class="tr-nobdr">
+            <h3 > 高性能PHP 7首著问世 宇宙至强语言迎来重大版本升级</h3><br>
+            <p style=" color: #323232;">首著问世 宇宙至强语言迎来重大版本升级</p>
+        </div>
+        <div class="txt">
+            <div class="price_pc" id="pc-price">
+
+                <div class="price_d">
+                    <span class="t" id="wantujia">万图价</span>
+                    <span><p id="jiaqian">¥58.20</p></span>
+                    <ul class="size">
+                        <li>专柜价：<span class="search_pre_price">¥69.00</span>(8.44折)</li>
+                    </ul>
+                </div>
+                <div class="price_vip" style="display:none" id="dd-vip">
+                    <span></span>
+                </div>
+            </div>
+            <div class="cumulative"></div>
+        </div>
+        <div class="txt-h">
+        </div>
+        <script>
+            $(document).ready(function () {
+                //����ı������
+                var t = $("#text_box");
+                //��ʼ������Ϊ1,��ʧЧ��
+                $('#min').attr('disabled', true);
+                //�������Ӳ���
+                $("#add").click(function () {
+                    t.val(parseInt(t.val()) + 1)
+                    if (parseInt(t.val()) != 1) {
+                        $('#min').attr('disabled', false);
+                    }
+
+                })
+                //�������ٲ���
+                $("#min").click(function () {
+                    t.val(parseInt(t.val()) - 1);
+                    if (parseInt(t.val()) == 1) {
+                        $('#min').attr('disabled', true);
+                    }
+
+                })
+            });
+        </script>
+        <div class="gcIpt">
+            <span class="guT">数量</span>
+            <input id="min" name="" type="button" value="-"/>
+            <input id="text_box" name="" type="text" value="1" style="width:30px; text-align: center; color: #0F0F0F;"/>
+            <input id="add" name="" type="button" value="+"/>
+            <span class="Hgt">库存（99）</span>
+        </div>
+        <div class="nobdr-btns">
+            <button onclick="aaa()" class="addcart hu"><img src="<?php echo __GOODS_IMAGES__;  ?>shop.png" width="25" height="25"/>加入购物车</button>
+            <button class="addcart yh"><img src="<?php echo __GOODS_IMAGES__;  ?>ht.png" width="25" height="25"/>立即购买</button>
+        </div>
+        <div class="guarantee">
+            <span>邮费：包邮&nbsp;&nbsp;支持货到付款 <a href=""><img src="<?php echo __GOODS_IMAGES__;  ?>me.png"/></a></span>
+        </div>
+    </div>
+
+    <div class="extInfo">
+        <div class="brand-logo">
+            <a href="" title="厦门万图书城">
+                <img src="<?php echo __GOODS_IMAGES__;  ?>ho_03.png"/>
+            </a>
+        </div>
+        <div class="seller-pop-box">
+            <span class="tr">商家名称：国际万图书城</span>
+            <span class="tr">商家等级：高级店铺</span>
+            <span class="tr">客家电话：12345678910</span>
+            <span class="tr hoh">
+            	            		<a title="国际万图书城" href="">所在地区：厦门万图书城</a>
+            	            	</span>
+        </div>
+        <div class="seller-phone">
+            	            	<span class="pop im">
+            	            		<a href="" data-name="联系卖家"><img src="<?php echo __GOODS_IMAGES__;  ?>phon.png"/>联系卖家</a>
+            	            	</span>
+            <span class="pop in">
+            	            		<a href="" data-name="咨询卖家"><img src="<?php echo __GOODS_IMAGES__;  ?>qq.png"/>咨询卖家</a>
+            	            	</span>
+            <span class="pop in">
+            	            		<a href="" data-name="进店逛逛"><img src="<?php echo __GOODS_IMAGES__;  ?>shop-line.png"/>进店逛逛</a>
+            	            	</span>
+            <span class="pop in">
+            	            		<a href="" data-name="关注店铺"><img src="<?php echo __GOODS_IMAGES__;  ?>staar.png"/>关注店铺</a>
+            	            	</span>
+        </div>
+        <div class="jd-service">
+            <a href="">
+                <!--<img src="<?php echo __GOODS_IMAGES__;  ?>ho_07.png"/>-->
+            </a>
+        </div>
+        <div class="suport-icons">
+            <h4>扫一扫<br/>手机下单更优惠</h4>
+            <img src="<?php echo __GOODS_IMAGES__;  ?>ho_11.jpg"/>
+        </div>
+    </div>
+</div>
+<!-- 推荐搭配 -->
+<div class="gdetail"></div>
+
+<!-- 商品介紹 -->
+<div class="gdetail">
+    <!-- left -->
+    <div class="aside" style="height: 900px;">
+        <h3>看了还看<span><img src="<?php echo __GOODS_IMAGES__;  ?>fod.png" width="22" height="22"/>换一批</span></h3>
+        <li class="ac-mod-list" style="border-bottom: 1px dotted #ccc; margin-bottom:1px;" ;>
+            <dt><a href=""><img src="<?php echo __GOODS_IMAGES__;  ?>3.jpg" style="padding-top: 10px;"/></a></dt>
+            <dd>
+                <span>¥121.80</span>
+                <p>东野圭吾经典套装（全四册）</p>
+                <p style="padding-bottom: 10px;padding-top: 10px;">作者:东野圭吾</p>
+            </dd>
+        </li>
+        <li class="ac-mod-list" style="border-bottom: 1px dotted #ccc; margin-bottom:1px;" ;>
+            <dt><a href=""><img src="<?php echo __GOODS_IMAGES__;  ?>1.jpg" style="padding-top: 10px;"/></a></dt>
+            <dd>
+                <span>￥50.8</span>
+                <p>PHP学习手册</p>
+                <p style="padding-bottom: 10px;padding-top: 10px;">作者:[美]David Sklar（大卫·斯克拉）</p>
+            </dd>
+        </li>
+        <dl class="ac-mod-list">
+            <dt><a href=""><img src="<?php echo __GOODS_IMAGES__;  ?>2.jpg" style="padding-top: 10px;"/></a></dt>
+            <dd>
+                <span>￥50.8</span>
+                <p>PHP学习手册</p>
+                <p style="padding-bottom: 10px;padding-top: 10px;">作者:[美]David Sklar（大卫·斯克拉）</p>
+            </dd>
+        </dl>
+    </div>
+    <!-- right -->
+    <script>
+        var detail = document.querySelector('.detail');
+        var origOffsetY = detail.offsetTop;
+
+        function onScroll(e) {
+            window.scrollY >= origOffsetY ? detail.classList.add('sticky') :
+                detail.classList.remove('sticky');
+        }
+
+        document.addEventListener('scroll', onScroll);
+    </script>
+    <div class="detail">
+        <div class="active_tab" id="outer">
+            <ul class="act_title_left" id="tab">
+                <li class="act_active">
+                    <a href="#">商品介绍</a>
+                </li>
+            </ul>
+            <ul class="act_title_right">
+                <li class="mui">
+                    <a id="mui-a" href="#">扫手机下单+</a>
+                </li>
+                <li class="mui-ac">
+                    <a href="#">加入购物车</a>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div id="content" class="active_list">
+            <!--0-->
+            <div id="ui-a" class="ui-a">
+                开 本：16开纸 &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;张：胶版纸包&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;装：平装-胶订是否套装：否&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;国际标准书号ISBN：9787121328107<br>
+                所属分类：
+                图书>计算机/网络>程序设计>PHP<br>
+                编辑推荐<br>
+                基于PHP7，深刻揭示内核原理<br>
+                内容翔实，详细介绍PHP语言底层的实现<br>
+                助力开发者进一步理解PHP，参与到PHP的实现中<br><br>
+
+                编辑推荐<br>
+                本书通俗易懂且图文并茂，实践案例丰富，相信一定能吸引大家阅读。全书目标清晰，始终围绕着如何使用PHP及周边技术来优化性能这一主题，能够为许多工程师解决实际问题。
+                <br><br>内容简介<br>
+                PHP是一种伟大的构建Web App的通用开源脚本语言。PHP 7是*版本。主要突破了向后兼容性的问题，致力于高性能和高速度。本书将会高节奏地向你介绍PHP7，来提高你的编码速度及技巧，书中所涉及的概念将指导你作为一名PHP程序员不断提高你App的性能标准。我们将向你介绍PHP 7 的新特性接着是PHP 7中面向对象的程序设计概念。接着我们将解释如何提高PHP 7 App性能及数据库性能。通过这本书，你将能够使用本书中讨论的多种基准测试工具来提高你的程序性能。*后，本书讨论了PHP的*实践来帮助你提高编码质量。本书是一本循序渐进的指南，目的在于通过真实的案例来提高你的PHP代码质量。
+                <br><br>作者简介<br>
+                　　吕毅，链家网架构师，链家网大数据平台团队负责人。2015年8月加入链家网，之前负责链家网基础服务平台建设。 曾就职于百度移动云事业部（2012~2015），新浪平台架构部SAE（2010~2012）。目前正在攻读北京大学计算机在职硕士。
+                　　<br>Altaf曾在团队中担任系统工程师，使用汇编语言与C语言为测试机器人开发系统控制软件，之后他对Web技术非常感兴趣，并自此投身Web领域。Altaf曾在工作中使用过许多PHP框架，例如Zend、Laravel、Yii，同时他也使用过不少开源项目，例如Drupal、WordPress、PrestaShop和　　　　Magento。Altaf自主设计并实现了两套CMS系统，实现了多语言支持、全线控制、翻译能力以及不同种类的多语言内容管理。现如今，Altaf是一家时尚企业shy7lo.com的技术主管，工作职责是管理公司内部与国外的研发团队，进而落实Magento和Laravel应用程序的开发与部署工作。除了Web应用程序外，Altaf还开发过iOS、Android应用程序，例如在Lumen构建API。Altaf是面向服务架构（SOA）的狂热爱好者，并成功地在多个项目中使用它。
+                　　<br>Altaf非常关注Web性能，并在高速发展与可扩展的生产环境中运用了*的技术，如PHP 7、Nginx、Redis、Varnish等。他是Debian系统的爱好者，并已将其应用于所有Web应用程序的运行环境中。
+                <br>显示全部信息<br>
+                <br>目　　录<br><br>
+                1 搭建环境	1<br>
+                搭建Windows环境	2<br>
+                搭建Debian或Ubuntu环境	5<br>
+                Debian	5<br>
+                Ubuntu	6<br>
+                搭建CentOS环境	10<br>
+                安装Nginx	10<br>
+                安装PHP 7	11<br>
+                安装Percona Server	14<br>
+                搭建Vagrant环境	15<br>
+                本章小结	17<br>
+                2 PHP 7新特性	18<br>
+                OOP特性	18<br>
+                显示全部信息<br>
+                <br>前　　言<br>
+
+                序言<br>
+
+                近些年来，PHP社区始终面临一个巨大问题：性能。在性能问题上，无论使用多么强悍的机器，PHP都会存在一定的瓶颈。在PHP 5.4、PHP 5.5、PHP 5.6版本中，性能开始有所提升，但在高并发的场景下PHP依然会暴露出性能问题。PHP社区开发了一些像Alternative PHP Cache（APC）、Zend OpCache这样的缓存工具，希望借此缓存opcode以达到更高性能，这个做法的确在一些场景下有效解决了性能问题。
+                <br>为了解决PHP的性能问题，Facebook开发并开源了他们的内部项目HipHop Virtual Machine（HHVM）。如HHVM官网介绍，它通过使用即时编译（JIT）在保持了灵活开发的同时显著提升了PHP性能。HHVM相比于PHP有很大的性能提升，从而被广泛应用到如Magento这样的生产环境中。
+                <br>PHP曾希望通过PHP Next Generation（PHPNG）来与HHVM抗衡，PHPNG项目主要通过重写和优化Zend引擎内存管理以及PHP数据格式来提升性能，这也成为PHPNG的核心目标。全球的工程师都开始积极对比PHPNG与HHVM，并且结果表明，PHPNG性能优于HHVM。
+                <br>最后，在PHP主干中融入了PHPNG以及一系列的优化与重写后，PHP 7正式发布并带来了重大的性能提升。PHP 7依然没有采用JIT方案，但其性能绝佳，与使用JIT技术的HHVM差异很小。这个版本从性能上相对于从前的历史版本具有非常大的进步。
+
+                <br><br><br>价格说明<br>
+                当当价：为商品的销售价，具体的成交价可能因会员使用优惠券、积分等发生变化，最终以订单结算页价格为准。<br>
+                划线价：划线价格可能是图书封底定价、商品吊牌价、品牌专柜价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品曾经展示过的销售价等，由于地区、时间的差异化和市场行情波动，商品吊牌价、品牌专柜价等可能会与您购物时展示的不一致，该价格仅供您参考。<br>
+                折扣：折扣指在划线价（图书定价、商品吊牌价、品牌专柜价、厂商指导价等）某一价格基础上计算出的优惠比例或优惠金额。如有疑问，您可在购买前联系客服咨询。<br>
+                异常问题：如您发现活动商品销售价或促销信息有异常，请立即联系我们补正，以便您能顺利购物。<br><br><br><br></p>
+
+            </div>
+            <!--商品规格-->
+            <div id="bit" class="bit">
+                <ul style="display:none;">
+                </ul>
+            </div>
+
+            <!--商品评价-->
+
+            <div id="ui-c" class="ui-c">
+                <ul style="display:none;">
+
+                </ul>
+            </div>
+            <!--售后保障-->
+            <div id="uic" class="uic">
+                <ul style="display:none;">
+                </ul>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                window.onload = function () {
+                    var $li = $('#tab li');
+                    var $ul = $('#content ul');
+
+                    $li.mouseover(function () {
+                        var $this = $(this);
+                        var $t = $this.index();
+                        $li.removeClass();
+                        $this.addClass('act_active');
+                        $ul.css('display', 'none');
+                        $ul.eq($t).css('display', 'block');
+                    })
+                }
+            });
+        </script>
+    </div>
+</div>
+<!--ajax 添加数据-->
+<script type="text/javascript">
+    function aaa() {
+        $.post(
+            'index.php?g=home&c=cart&a=getGoods6',
+            function (result) {
+                if (result.errno==200){
+                    alert(result.mess+"\n点击确定返回商品列表");
+                    window.location.href='index.php?g=home&c=index&a=list';
+                } else {
+                    alert(result.mess+"\n点击确认重新添加商品");
+                    window.location.href='inedx.php?g=home&c=index&a=index6';
+                }
+            },
+            "json"
+        );
+      return false;
+    }
+</script>
+</body>
+</html>

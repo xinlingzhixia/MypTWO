@@ -1,0 +1,160 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/*border: 1px solid red;*/
+}
+/*goods*/
+#hmgoods{
+	margin-top: 140px;
+
+}
+#hmgoodstophx{
+	border-bottom: 1px solid rgb(200,200,200);
+}
+.goodstop{
+	text-align: center;
+}
+.goodstop ul li a{
+	color: rgb(218,218,218);
+}
+
+.goodscontent{
+	margin-top:30px;
+	margin-bottom: 30px;
+}
+
+.goodscontentleft ul li img{
+	height: 100px;
+	/*width: 576px;*/
+}
+.goodscontentimg img{
+	height: 400px;
+}
+.goodscontentimg p{
+	color: #dadada;
+	font-size: 12px;
+	text-align: center;
+}
+.goodsulcolors li{
+	margin-right: 5px;
+}
+.goodsulcolors li a img{
+	height: 48px;
+}
+
+.goodsulsizes li span{
+	font-size: 12px;
+	text-align: center;
+	border: 1px solid #dadada;
+	box-sizing: border-box;
+}
+#sizeguide{
+	text-decoration: underline;
+	color: #000;
+	font-size: 12px;
+}
+.goodsdescribe{
+	margin-top: 10px;
+}
+
+.goodsdescribe a{
+	color: black;
+	font-size: 12px;
+}
+
+.goodsdescribetop{
+	width: 430px;
+	height: 40px;
+	border: 1px solid #dadada;
+}
+.goodsdescribetop a {
+	float: left;
+	padding: 10px;
+}
+.goodsdescribebottom{
+	width: 430px;
+	height: 100px;
+	padding: 10px;
+	border: 1px solid #dadada;
+}
+
+/*//goods*/
+
+/*cart*/
+#hmcart{
+	margin-bottom: 30px;
+}
+
+#hmcarttophx{
+	width: 100%;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.cartcontent{
+	border: 1px solid rgb(200,200,200);
+	margin-top: 20px;
+
+}
+.cartcontentleft{
+	float: left;
+	position: relative;
+	width: 538px;
+	height: 487px;
+
+}
+.cartgoodsimg {
+	display: block;
+	/*border: 1px solid rgb(200,200,200);*/
+	width: 145px;
+	height: 217px;
+}
+.cartgoodsimg img{
+	height: 217px;
+}
+.cartul1{
+	margin: 10px;
+	position: relative;
+	top: -230px;
+	left: 170px;
+}
+
+.cartulbtn {
+	width: 80px;
+	height: 30px;
+	margin: 10px;
+	border: 1px solid rgb(200,200,200);
+	background-color: #fff;
+	color: #0d0d0d;
+	text-shadow: none;
+	background-image: none;
+}
+.cartul1 li select{
+	width: 80px;
+	height: 30px;
+}
+
+.carttable{
+	position: relative;
+	top: -40px;
+}
+
+#cartrborder{
+	border-bottom: 1px solid rgb(200,200,200);
+	padding: 10px;
+}
+
+#cartribjz{
+	width: 225px;
+	height: 40px;
+	color: white;
+	background-color: black;
+	padding: 10px;
+	margin-bottom: 10px;
+
+}
+#cartrdsm p{
+	margin: 10px;
+}
+/*//cart*/

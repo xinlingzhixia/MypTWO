@@ -1,0 +1,65 @@
+/*自适应的调整*/
+/*媒体查询*/
+@media only screen and (max-width: 900px) {
+	#hmheadmenu_searchinput{
+		width: 160px;
+	}
+}
+
+@media only screen and (max-width: 850px) {
+	#hmheadmenu_searchinput{
+		width: 130px;
+	}
+	#erdemxhmcontainerimg2{
+	    margin-top: -250px;
+	    height: 70px;
+	} 
+}
+@media only screen and (max-width: 790px) {
+	#hmheadmenu_searchinput{
+		width: 100px;
+	}
+	
+}
+
+@media only screen and (max-width: 768px )and (min-width:590px) {
+	.hmhead_logo {
+		padding-top: 30px;
+	}
+	
+}
+
+@media only screen and (max-width: 730px) {
+	#hmheadmenu_searchinput{
+		width: 70px;
+	}
+	#headnmenusearchimg{
+    	right: 4px;
+		
+	}
+
+}
+
+@media only screen and (max-width: 715px){
+	#hmhead_top_left-ul1 li{
+    	margin-left: 5px;	
+	}
+	#hmhead_top_right-ul1 li{
+    	margin-left: 5px;
+	}
+	#hmheadmenu_ul li a{
+		margin: 0 10px;
+	}
+
+}
+@media only screen and (max-width: 645px){
+	#hmhead_top_left-ul1 li{
+    	margin-left: 0px;	
+	}
+	#hmhead_top_right-ul1 li{
+    	margin-left: 0px;
+	}
+	#hmheadmenu_ul li a{
+		margin: 0 0px;
+	}
+}

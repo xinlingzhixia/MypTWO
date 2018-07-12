@@ -1,0 +1,47 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/*border: 1px solid red;*/	
+}
+#hmlogin{
+	margin-top: 140px;
+
+}
+#hmlogintophx{
+	border-bottom: 1px solid rgb(200,200,200);
+}
+.logintop{
+	text-align: center;
+}
+.logintop ul li a{
+	color: rgb(218,218,218);	
+}
+
+.logincontent{
+	width: 50%;
+	float: left;
+	
+}
+
+.logincontent h2{
+	font-size: 16px;
+}
+
+.logincontent h3{
+	font-size: 14px;
+}
+.logincontent p{
+	font-size: 12px;
+}
+.logincontentleft a{
+	color: black;
+	text-decoration: underline;
+}
+
+#logincontentrightp1{
+	text-align: center;
+	color: black;
+	padding: 5px;
+	border: 2px solid black;
+}
